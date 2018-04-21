@@ -11,6 +11,9 @@
 |
 */
 
+/*
+	GET POST PUT DELETE RESOURCE
+*/
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,3 +28,5 @@ Route::get('login', function () {
     return view('login');
 });
 
+Route::get('form_nueva_categoria', 'FormulariosController@form_nueva_categoria');
+Route::post('agregar_nueva_categoria', 'CategoriaController@agregar_nueva_categoria');

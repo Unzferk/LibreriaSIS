@@ -17,6 +17,9 @@ class Producto extends Model
     public function seccion(){
     	return $this->belongsTo('App\Seccion');
     }
+    public function proveedores(){
+    	return $this->belongsToMany('App\Proveedor');
+    }
 
 }
 

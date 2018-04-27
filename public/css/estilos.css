@@ -12,7 +12,8 @@ main{
 
 .titus{
     height: 80px;
-    background-color: #CAFFFE;
+    /*background-color: #CAFFFE;*/
+    background-color: #222020;
     padding-top: 13px;
     
 }
@@ -168,7 +169,7 @@ main{
 
 
 .contend-main{
-    background-color: white;
+    background-color: blue;
 }
 
 .mcontainer{

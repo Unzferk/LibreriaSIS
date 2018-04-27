@@ -26,8 +26,8 @@
         <div class="contend-main">
             <div class="titus">
                 <span class="lnr lnr-menu show"></span> 
-                
             </div>   
+            
 
             <div class="mcontainer">
             <h1>Bienvenido</h1>

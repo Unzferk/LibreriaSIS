@@ -1,249 +1,49 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sistema | Panel Control</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="plugins/morris/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker-bs3.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
-     <link rel="stylesheet" href="css/sistemalaravel.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
-
-      <header class="main-header">
-        <!-- Logo -->
-        <a href="index2.html" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Plu</b>SIS</span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- Messages: style can be found in dropdown.less-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IRBE</title>
+    <link rel="stylesheet" href="icon/style.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main>
+        <div class="content-menu">
             
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Usuario Plusis</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                    <p>
-                     Usuario Plusis
-                      <small>Member since Nov. 2012</small>
-                    </p>
-                  </li>
-                  <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="logout" class="btn btn-default btn-flat">Salir</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <!-- Control Sidebar Toggle Button -->
-              <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-              <p>Usuario:IRBE</p>
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-          <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </form>
-          <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-            <li class="header">MENÚ</li>
-            <li class="active treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Panel de control</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li class="active"><a href="javascript:void(0);" onclick="cargarformulario(1);" ><i class="fa fa-circle-o"></i>Agregar Categoria</a></li>
-              
-              </ul>
-            </li>
-
-  
-           
-           
-          
-          </ul>
-        </section>
-        <!-- /.sidebar -->
-      </aside>
-
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper" style="min-height:2000px !important;">
-        <!-- Content Header (Page header) -->
-        <section class="content-header"> 
-          <h1>
-            Escritorio
-            <small>Control panel</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-            <li class="active">Dashboard</li>
-          </ol>
-        </section>
-
-
-        <!-- contenido principal -->
-        <section class="content"  id="contenido_principal">
+            <li><span class="lnr lnr-home icon1"></span><h4 class="text1">Inicio</h4></li>
+            <li><span class="lnr lnr-film-play icon2"></span><h4 class="text2">Videos</h4></li>
+            <li><span class="lnr lnr-store icon3"></span><h4 class="text3">Productos</h4></li>
+            <li><span class="lnr lnr-picture icon4"></span><h4 class="text4">Galeria</h4></li>
+            <li><span class="lnr lnr-briefcase icon5"></span><h4 class="text5">Foro</h4></li>
+            <li><span class="lnr lnr-license icon6"></span><h4 class="text6">Blog</h4></li>
+            <li><span class="lnr lnr-bubble icon7"></span><h4 class="text7">Mensajes</h4></li>
+            <li><span class="lnr lnr-envelope icon8"></span><h4 class="text8">Contactos</h4></li>
+            <li><span class="lnr lnr-question-circle icon9"></span><h4 class="text9">Nosotros</h4></li>
+            
+        </div>
         
-          
-                   
-                  
+        
+        <div class="contend-main">
+            <div class="titus">
+                <span class="lnr lnr-menu show"></span> 
+                
+            </div>   
 
-     
-        </section>
+            <div class="mcontainer">
+            <h1>Bienvenido</h1>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis consectetur quia asperiores eligendi minima doloribus neque nemo temporibus repellendus fugiat inventore quaerat pariatur obcaecati nulla ab laudantium, vel laborum libero. Illum officiis rem, repellendus aliquid tempora sit saepe vel odio porro iure laudantium architecto ipsum, fuga dicta quod maxime? Ullam qui quis cum eaque omnis nesciunt ex a optio quos dolor sint sed ab modi, doloribus. Minima at quisquam consequatur. Voluptatum quaerat temporibus, perferendis id ab, debitis inventore voluptatibus molestias? Ex reiciendis dolorem, consequatur voluptas. Et labore earum, quia sed ea cupiditate molestias aliquam sapiente officia quibusdam repellendus, recusandae perspiciatis aperiam temporibus. Quasi, temporibus beatae neque deserunt eligendi omnis error sequi nam ullam doloremque perferendis doloribus, consectetur illo deleniti, sit tenetur. Libero odio quaerat pariatur officiis eius minus, suscipit perspiciatis eos ratione adipisci, voluptate facere cum excepturi, assumenda natus exercitationem. Quas et harum ducimus aliquam tempora nihil. Nulla veritatis perspiciatis quas porro quae voluptas in, eligendi dignissimos facilis cum. Qui ipsa nobis soluta aliquid cupiditate cumque, in perspiciatis, molestias possimus ex rerum, nostrum. Ea nisi dicta, animi reiciendis reprehenderit architecto voluptatem ipsum repudiandae similique modi, est maiores molestiae necessitatibus blanditiis mollitia porro aliquid ad. Voluptate ut dignissimos necessitatibus molestias pariatur?</p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias qui, placeat excepturi ipsa velit animi tempore deserunt accusantium omnis voluptas corporis est voluptates saepe. Quidem eligendi quos aspernatur nihil recusandae.</p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum maiores iusto reprehenderit corporis assumenda praesentium sapiente quidem laboriosam suscipit pariatur. Quas eius doloremque excepturi quibusdam, deserunt vero sit enim! Rerum nobis sunt eos ab perspiciatis est laboriosam, explicabo commodi adipisci quis iusto ipsum voluptas dolorem sequi expedita, sit quibusdam reprehenderit! Ducimus corporis, labore exercitationem quae! Eaque totam fugit obcaecati expedita debitis iusto accusantium impedit, aliquam nisi qui voluptatum eum, distinctio. Aut enim ipsam ut rerum, blanditiis vero nemo aliquid provident consequuntur quos a asperiores ducimus excepturi aliquam voluptatum esse, deserunt. Dicta a, voluptate reiciendis quam provident. Architecto mollitia nam quae rerum laborum inventore assumenda obcaecati pariatur id culpa excepturi, veritatis cupiditate autem odit vitae dignissimos, recusandae ipsam labore enim iure consectetur. Delectus non sit, minus rerum et quas at soluta eum architecto inventore saepe, quibusdam iste earum deleniti rem! Iste excepturi ut dolor, illum iure veniam sed. Accusantium sint nemo placeat sunt error harum, dolorum! Inventore provident necessitatibus vero alias commodi pariatur facilis optio maiores, libero quos, reprehenderit. Earum similique quia atque iure, recusandae molestiae aperiam illum eum tempore, eligendi nulla incidunt, nesciunt ipsa, consequuntur sint velit accusantium eius! Facere amet placeat saepe commodi fugit tempora, quos aut architecto ex voluptatibus totam porro exercitationem reiciendis corporis, aperiam aliquid voluptate vel. Eum optio sapiente enim numquam rerum illum laborum modi, repellat reiciendis nostrum neque veniam odio a quos. Illum a, quisquam veritatis explicabo libero commodi quam tempore dignissimos. Facilis nisi quisquam doloremque temporibus, necessitatibus inventore magni ea ut non deserunt harum libero soluta placeat pariatur obcaecati accusantium quidem enim quo ipsa voluptatibus hic dolor, dolorem ratione aperiam nobis. Modi expedita nisi aut aspernatur vitae. Incidunt, iure. Quis illo sed modi magnam exercitationem nihil iure, nemo a accusantium vitae voluptates, iusto rerum unde optio. Consequatur sequi, quas necessitatibus fugit aspernatur consequuntur, commodi.</p>
+            
+            
+            </div>
+        </div>
+    </main>
     
-      <!-- cargador empresa -->
-        <div style="display: none;" id="cargador_empresa" align="center">
-            <br>
-         
-
-         <label style="color:#FFF; background-color:#ABB6BA; text-align:center">&nbsp;&nbsp;&nbsp;Espere... &nbsp;&nbsp;&nbsp;</label>
-
-         <img src="imagenes/cargando.gif" align="middle" alt="cargador"> &nbsp;<label style="color:#ABB6BA">Realizando tarea solicitada ...</label>
-
-          <br>
-         <hr style="color:#003" width="50%">
-         <br>
-       </div>
-
-  
-
-
-
-      </div><!-- /.content-wrapper -->
-     
-
-
-     
-    </div><!-- ./wrapper -->
-
-
-    <!-- jQuery 2.1.4 -->
-    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-
-    <script>  $("#content-wrapper").css("min-height","2000px"); </script>
-   
-    <!-- Bootstrap 3.3.5 -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- Morris.js charts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="plugins/morris/morris.min.js"></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-    <!-- jvectormap -->
-    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="plugins/knob/jquery.knob.js"></script>
-    <!-- daterangepicker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-    <script src="plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- datepicker -->
-    <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-    <!-- Bootstrap WYSIHTML5 -->
-    <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <!-- Slimscroll -->
-    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <!-- FastClick -->
-    <script src="plugins/fastclick/fastclick.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/app.min.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
- 
- <!-- javascript del sistema laravel -->
-   <script src="js/sistemalaravel.js"></script>
-
-
-  </body>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+</body>
 </html>

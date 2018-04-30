@@ -1,7 +1,25 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class testcat extends Controller
+{
+    //
+}
+
+
+
+
+
+
+
+/*
 <?php namespace App\Http\Controllers;
 
 use App\Categoria;
-use Request;
+use Illuminate\Http\Request;
 
 class CategoriaController extends Controller {
 
@@ -51,3 +69,4 @@ class CategoriaController extends Controller {
 	}
 
 }
+*/

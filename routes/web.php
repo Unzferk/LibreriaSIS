@@ -23,10 +23,20 @@ Route::get('home', function () {
     return view('home');
 });
 
+Route::get('inicio',function(){
+	return view('inicio');
+});
 
 Route::get('login', function () {
     return view('login');
 });
 
-Route::get('form_nueva_categoria', 'FormulariosController@form_nueva_categoria');
-Route::post('agregar_nueva_categoria', 'CategoriaController@agregar_nueva_categoria');
+Route::group(['prefix' => 'admin'],function(){
+
+	Route::resource('categorias','CategoriasController');
+
+	Route::resource('productos','ProductosController');
+
+	Route::resource('proveedores','ProveedoresController');
+
+});

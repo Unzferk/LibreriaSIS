@@ -28,9 +28,9 @@
         </div>
         
         <div class="contend-main">    
-            <div class="mcontainer">
+           
                 @yield('content-yield')
-            </div>
+           
         </div>
     </main>
     

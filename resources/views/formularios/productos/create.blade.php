@@ -1,19 +1,19 @@
 @extends('template.base')
 
-@section('title','crear proveedor')
+@section('title','crear producto')
 	
 
 @section('content-yield')
-	<form action="{{ url('admin/proveedores/create')}}" method="POST" role="form">
+	<form action="/admin/productos" method="POST" role="form">
 		{{csrf_field()}}
   <div class="form-group">
     <label for="nombre">Nombre</label>
-    <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingresa el nombre del proveedor">
+    <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingresa el nombre del producto">
   </div>
 
   <div class="form-group">
     <label for="marca">Marca</label>
-    <input name="marca" type="text" class="form-control" id="marca" placeholder="Ingresa la marca del proveedor">
+    <input name="marca" type="text" class="form-control" id="marca" placeholder="Ingresa la marca del producto">
   </div>
 
   <div class="form-group">
@@ -22,23 +22,23 @@
   </div>
 
   <div class="form-group">
-    <label for="correo">Correo</label>
-    <input name="correo" type="text" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingresa el correo del proveedor">
+    <label for="stock">Stock</label>
+    <input name="stock" type="text" class="form-control" id="stock" aria-describedby="emailHelp" placeholder="Ingresa el stock">
   </div>
 
   <div class="form-group">
-    <label for="pag_web">Pag:Web</label>
-    <input name="pag_web" type="text" class="form-control" id="pag_web" aria-describedby="emailHelp" placeholder="Ingresa pag_web">
+    <label for="categoria_id">Categoria_id</label>
+    <input name="categoria_id" type="text" class="form-control" id="categoria_id" aria-describedby="emailHelp" placeholder="Ingresa categoria_id">
   </div>
   
   <div class="form-group">
-    <label for="fax">Fax</label>
-    <input name="fax" type="text" class="form-control" id="fax"  placeholder="Ingresa el fax del proveedor">
+    <label for="seccion_id">Seccion_id</label>
+    <input name="seccion_id" type="text" class="form-control" id="seccion_id"  placeholder="Ingresa seccion_id">
   </div>
 
   <div class="form-group">
-    <label for="direccion">Direccion</label>
-    <input name="direccion" type="text" class="form-control" id="direccion" aria-describedby="emailHelp" placeholder="Ingresa direccion">
+    <label for="descripcion">Descripcion</label>
+    <input name="descripcion" type="text" class="form-control" id="descripcion" aria-describedby="emailHelp" placeholder="Ingresa descripcion">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -52,14 +52,25 @@
       <th scope="col">nombre</th>
       <th scope="col">marca</th>
       <th scope="col">precio</th>
-      <th scope="col">correo</th>
-      <th scope="col">pag-web</th>
-      <th scope="col">fax</th>
-      <th scope="col">direccion</th>
+      <th scope="col">stock</th>
+      <th scope="col">categoria</th>
+      <th scope="col">seccion</th>
+      <th scope="col">descripcion</th>
     </tr>
   </thead>
   <tbody>
-  	
+  	@foreach($productos as $producto)
+    <tr>
+      <td>{{ $producto->nombre }}</td>
+      <td>{{ $producto->marca }}</td>
+      <td>{{ $producto->precio }}</td>
+      <td>{{ $producto->stock }}</td>
+      <td>{{ $producto->categoria }}</td>
+      <td>{{ $producto->seccion }}</td>
+      <td>{{ $producto->Descripcion }}</td>
+    </tr>
+
+    @endforeach
   </tbody>
 </table>
 

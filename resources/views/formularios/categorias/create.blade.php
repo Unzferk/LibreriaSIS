@@ -4,7 +4,28 @@
 	
 
 @section('content-yield')
-	<form action="/admin/categorias" method="POST" role="form">
+  
+  <div class="container">
+    
+    <div class="row">
+      
+      <div class="col-sm-12 col-md-4" style="background: red">
+          
+        <br>
+        'aiosjd[jojaf;o'
+      </div>
+      <div class="col-sm-12 col-md-8" style="background: blue">
+        
+      </div>
+    </div>
+
+  </div>
+
+
+  
+
+
+	<!--form action="/admin/categorias" method="POST" role="form">
 		{{csrf_field()}}
   <div class="form-group">
     <label for="nombre">Nombre</label>
@@ -19,7 +40,7 @@
 	
 	<br>
 	<!--tabla-->
-	<table class="table table-striped">
+	<!--table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">nombre</th>
@@ -36,6 +57,6 @@
     @endforeach
   </tbody>
   {!! $categorias ->render() !!}
-</table>
+</table-->
 
 @endsection

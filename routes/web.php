@@ -39,4 +39,6 @@ Route::group(['prefix' => 'admin'],function(){
 
 	Route::resource('proveedores','ProveedoresController');
 
+	Route::resource('secciones','SeccionesController');
+
 });

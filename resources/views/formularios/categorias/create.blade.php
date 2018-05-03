@@ -1,62 +1,76 @@
 @extends('template.base')
 
 @section('title','crear categoria')
-	
 
 @section('content-yield')
   
   <div class="container">
+    <div class="container">
+      <div class="titulo ">
+        <h2 class="text-right">Categorias</h2>
+      </div>
+      
+      <hr />
     
     <div class="row">
       
-      <div class="col-sm-12 col-md-4" style="background: red">
-          
-        <br>
-        'aiosjd[jojaf;o'
-      </div>
-      <div class="col-sm-12 col-md-8" style="background: blue">
-        
+      <div class="col-sm-12 col-md-4 card-container">
+         <div class="card card-outline-secondary border-info">
+                        <div class="card-header border-info">
+                            <h5 class="mb-0">Crear Nueva Categoria</h5>
+                        </div>
+                        <div class="card-body">
+                            <form class="form"  action="/admin/categorias" method="POST" role="form" autocomplete="off">
+                              {{csrf_field()}}
+                                <fieldset>
+                                    <label for="nombre" class="mb-0">Nombre</label>
+                                    <div class="row mb-1">
+                                        <div class="col-lg-12">
+                                            <input type="text" name="nombre" id="nombre" class="form-control" required="">
+                                        </div>
+                                    </div>
+                                    <label for="descripcion" class="mb-0">Descripcion</label>
+                                    <div class="row mb-1">
+                                        <div class="col-lg-12">
+                                            <textarea rows="6" name="descripcion" id="descripcion" class="form-control" required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-secondary btn-lg float-right">Añadir</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>           
+      </div>  
+
+      <div class="col-sm-12 col-md-8 card-container">
+        <div class="card card-outline-secondary border-info">
+          <div class="card-body">    
+            <table class="table table-striped list-container">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($categorias as $categoria)
+                <tr>
+                  <td>{{ $categoria->nombre }}</td>
+                  <td>{{ $categoria->descripcion }}</td>
+                </tr>
+
+                @endforeach
+              </tbody>
+              
+            </table>
+            {!! $categorias ->render() !!}
+          </div>
+         </div>
+
       </div>
     </div>
 
   </div>
-
-
-  
-
-
-	<!--form action="/admin/categorias" method="POST" role="form">
-		{{csrf_field()}}
-  <div class="form-group">
-    <label for="nombre">Nombre</label>
-    <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingresa el nombre del area">
-  </div>
-  <div class="form-group">
-    <label for="descripcion">Descripcion</label>
-    <textarea name="descripcion" class="form-control" id="descripcion" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-	
-	<br>
-	<!--tabla-->
-	<!--table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">nombre</th>
-      <th scope="col">descripcion</th>
-    </tr>
-  </thead>
-  <!tbody>
-    @foreach($categorias as $categoria)
-    <tr>
-      <td>{{ $categoria->nombre }}</td>
-      <td>{{ $categoria->descripcion }}</td>
-    </tr>
-
-    @endforeach
-  </tbody>
-  {!! $categorias ->render() !!}
-</table-->
 
 @endsection

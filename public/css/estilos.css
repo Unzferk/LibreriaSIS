@@ -4,7 +4,10 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
+hr{
+    background: #1A9D98;
+    
+}
 main{
     width: 100%;
     display: flex;
@@ -14,7 +17,8 @@ header{
     width: 100%;
     height: 60px;
     /*background: #C595C3;*/
-    background: #53AAAB;
+    /*background: #53AAAB;*/
+    background: #1A9D98;
 }
 
 header span{
@@ -33,10 +37,15 @@ header span:hover{
     border-radius: 10px;
 }
 
+.titulo{
+    color:  #157B77;
+    margin:0;
+    padding-bottom: 0px;
+}
+
 .content-menu{
     width: 100px;
-    /*background: #EBD7F5;*/
-    background: #CFFBF8;
+    background: #D8E5E4;
     transition: all 300ms;
 }
 
@@ -48,14 +57,24 @@ header span:hover{
     list-style: none;
     text-align: center;
     padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     color: black;
     transition: all 300ms;
     cursor: pointer;
 }
+.content-menu li a{
+    text-decoration: none;  
+    color: black;
+}
+.content-menu li a:hover{
+    color: white;
+}
 
 .content-menu li:hover{
     transform: translateY(10px);
-    background: rgba(0,0,0,0.5);
+    /*background: rgba(0,0,0,0.5);*/
+    background: #7B9190;
 }
 
 .content-menu li span{
@@ -188,10 +207,20 @@ header span:hover{
 }
 
 
+/*
+*   ESTILO DE /ADMIN/CATEGORIAS/CREATE
+*/
 
-
-
-
+.card-container{
+    margin:0;
+    padding: 10px;
+    padding-top: 0px;   
+}
+.list-container{
+    margin:10px;
+    padding-left:20px;
+    padding-top: 10px;
+}
 
 
 

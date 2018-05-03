@@ -25,8 +25,8 @@ class ProveedoresController extends Controller
      */
     public function create()
     {
-
-        return view('formularios.proveedores.create');
+        $proveedores = Proveedor::orderBy('nombre','ASC')->paginate(5);
+        return view('formularios.proveedores.create')->with('proveedores',$proveedores);
     }
 
     /**

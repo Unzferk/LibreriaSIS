@@ -11,6 +11,19 @@
       </div>
       
 <hr />
+<!--errors-->
+    @if (count($errors)>0)
+      
+      <div class="alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul> 
+      </div>
+
+    @endif
+
 
 <div class="container">
     
@@ -26,36 +39,36 @@
             <form action="/admin/productos" method="POST" role="form">
               {{csrf_field()}}
               <div class="form-group">
-                <label for="nombre">Nombre</label>
+                <label for="colFormLabelSm">Nombre</label>
                 <input name="nombre" type="text" class="form-control form-control-sm" id="nombre" placeholder="Lapiceros">
               </div>
               <div class="form-row">
                 <div class="form-group col-6">
-                  <label for="marca">Marca</label>
+                  <label for="marca colFormLabelSm">Marca</label>
                   <input name="marca" type="text" class="form-control form-control-sm" id="marca" placeholder="Sabonis">
                 </div>
                 <div class="form-group col-3">
-                  <label for="precio">Precio</label>
+                  <label for="precio colFormLabelSm">Precio</label>
                   <input name="precio" type="text" class="form-control form-control-sm" id="precio"  placeholder="99.9">
                 </div>
                 <div class="form-group col-3">
-                  <label for="stock">Stock</label>
+                  <label for="stock colFormLabelSm">Stock</label>
                   <input name="stock" type="text" class="form-control form-control-sm" id="stock"  placeholder="999">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="categoria_id">Categoria_id</label>
+                  <label for="categoria_id colFormLabelSm">Categoria_id</label>
                   <input name="categoria_id" type="text" class="form-control form-control-sm" id="categoria_id" placeholder="Ingresa categoria_id">
                 </div>
                 <div class="form-group">
-                  <label for="seccion_id">Seccion_id</label>
+                  <label for="seccion_id colFormLabelSm">Seccion_id</label>
                   <input name="seccion_id" type="text" class="form-control form-control-sm" id="seccion_id"  placeholder="Ingresa seccion_id">
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="descripcion">Descripcion</label>
+                <label for="descripcion colFormLabelSm">Descripcion</label>
                 <input name="descripcion" type="text" class="form-control form-control-sm" id="descripcion" aria-describedby="emailHelp" placeholder="Ingresa descripcion">
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>

@@ -12,6 +12,22 @@
       
       <hr />
     
+    <!--errors-->
+    @if (count($errors)>0)
+      
+      <div class="alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul> 
+      </div>
+
+    @endif
+
+    
+  
+    <!--form div-->
     <div class="row">
       
       <div class="col-sm-12 col-md-4 card-container">
@@ -21,6 +37,7 @@
                         </div>
                         <div class="card-body">
                             <form class="form"  action="/admin/categorias" method="POST" role="form" autocomplete="off">
+
                               {{csrf_field()}}
                                 <fieldset>
                                     <label for="nombre" class="mb-0">Nombre</label>

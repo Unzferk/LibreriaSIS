@@ -7,7 +7,7 @@
 
 <div class="container">
       <div class="titulo ">
-        <h2 class="text-right">Productos</h2>
+        <h2 class="text-left">Productos</h2>
       </div>
       
 <hr />

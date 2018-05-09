@@ -7,7 +7,7 @@
   <div class="container">
     <div class="container">
       <div class="titulo ">
-        <h2 class="text-right">Categorias</h2>
+        <h2 class="text-left">Categorias</h2>
       </div>
       
       <hr />

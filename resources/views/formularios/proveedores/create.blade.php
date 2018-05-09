@@ -6,7 +6,7 @@
 @section('content-yield')
     <div class="container">
       <div class="titulo">
-        <h2 class="text-right">Proveedores</h2>
+        <h2 class="text-left">Proveedores</h2>
       </div>
       <hr />
       <!--errors-->

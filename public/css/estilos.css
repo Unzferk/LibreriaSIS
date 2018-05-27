@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+body{
+   overflow: hidden;
+   background-image: url("/img/paper.jpg");
+}
 hr{
     background: #1A9D98;
     
@@ -18,7 +22,8 @@ header{
     height: 60px;
     /*background: #C595C3;*/
     /*background: #53AAAB;*/
-    background: #1A9D98;
+    /*background: #1A9D98;*/
+    background: #3FD9FA;
 }
 
 header span{
@@ -37,15 +42,19 @@ header span:hover{
     border-radius: 10px;
 }
 
+
+
 .titulo{
-    color:  #157B77;
+    color:  #73157B;
     margin:0;
     padding-bottom: 0px;
 }
 
 .content-menu{
     width: 100px;
-    background: #D8E5E4;
+    /*background: #D8E5E4;*/
+    /*background: #E6F7FF;*/
+    background: #ADEFFD;
     transition: all 300ms;
 }
 
@@ -186,7 +195,8 @@ header span:hover{
 
 
 .contend-main{
-    background-color: white;
+    /*background-color: white;*/
+    
     width: 100%;
     height: 100%;
 }
@@ -212,10 +222,18 @@ header span:hover{
 */
 
 .card-container{
-    margin:0;
-    padding: 10px;
-    padding-top: 0px;   
+    margin: 0;
+    padding: 20px;
+    padding-top: 10px;
+    background: none;  
 }
+
+.card-productos{
+    margin: 30px;
+    padding: 5px;
+
+}
+
 .list-container{
     margin:10px;
     padding-left:20px;

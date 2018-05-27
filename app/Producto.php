@@ -11,7 +11,7 @@ class Producto extends Model
     protected $fillable = ['nombre','marca','precio','stock','categoria_id','seccion_id','Descripcion'];
 
     public function categoria(){
-    	return $this->belongsTo('App\Categoria');
+    	return $this->belongsToMany('App\Categoria');
     }
 
     public function seccion(){

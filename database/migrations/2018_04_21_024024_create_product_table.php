@@ -16,13 +16,14 @@ class CreateProductTable extends Migration
         Schema::create('producto', function (Blueprint $table) {
             //campos
             $table->increments('id');
-            $table->String('nombre');
-            $table->String('marca');
+            $table->String('codigo_pro',10)
+            $table->String('nombre',30);
+            $table->String('marca',15);
             $table->integer('precio');
             $table->integer('stock');
             $table->integer('categoria_id')->unsigned();
             $table->integer('seccion_id')->unsigned();
-            $table->String('Descripcion');
+            $table->String('descripcion',130);
 
             //estableciendo llaves foraneas
             $table->foreign('categoria_id')->references('id')->on('categoria');

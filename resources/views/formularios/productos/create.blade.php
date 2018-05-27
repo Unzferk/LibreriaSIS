@@ -31,7 +31,7 @@
       
       <div class="col-sm-12 col-md-4 card-container">
 
-        <div class="card card-outline-secondary border-info">
+        <div class="card card-outline-secondary ">
           <div class="card-header border-info">
               <h5 class="mb-0">Crear Nuevo</h5>
           </div>
@@ -56,12 +56,12 @@
                   <input name="stock" type="text" class="form-control form-control-sm" id="stock"  placeholder="999">
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group">
+              <div class="form-row ">
+                <div class="form-group col-6">
                   <label for="categoria_id colFormLabelSm">Categoria_id</label>
                   <input name="categoria_id" type="text" class="form-control form-control-sm" id="categoria_id" placeholder="Ingresa categoria_id">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-6">
                   <label for="seccion_id colFormLabelSm">Seccion_id</label>
                   <input name="seccion_id" type="text" class="form-control form-control-sm" id="seccion_id"  placeholder="Ingresa seccion_id">
                 </div>
@@ -71,7 +71,8 @@
                 <label for="descripcion colFormLabelSm">Descripcion</label>
                 <input name="descripcion" type="text" class="form-control form-control-sm" id="descripcion" aria-describedby="emailHelp" placeholder="Ingresa descripcion">
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+              <button type="submit" class="btn btn-outline-secondary btn-sm">Importar</button>
             </form>
                             
           </div>

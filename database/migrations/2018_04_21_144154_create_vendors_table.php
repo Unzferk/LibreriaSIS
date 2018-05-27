@@ -15,10 +15,11 @@ class CreateVendorsTable extends Migration
     {
         Schema::create('proveedor', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('nombre',35);
+            $table->String('codigo',10)
+            $table->String('nombre',30);
             $table->String('telefono',8);
-            $table->String('correo',30);
-            $table->String('pag_web',50);
+            $table->String('correo',60);
+            $table->String('pag_web',60);
             $table->String('fax',30);
             $table->String('direccion',50);
             $table->timestamps();

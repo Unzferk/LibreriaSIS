@@ -16,9 +16,9 @@ class CreateProductTable extends Migration
         Schema::create('producto', function (Blueprint $table) {
             //campos
             $table->increments('id');
-            $table->String('codigo_pro',10)
-            $table->String('nombre',30);
-            $table->String('marca',15);
+            $table->string('codigo_pro',10);
+            $table->string('nombre',30);
+            $table->string('marca',15);
             $table->integer('precio');
             $table->integer('stock');
             $table->integer('categoria_id')->unsigned();

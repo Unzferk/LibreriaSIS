@@ -15,7 +15,7 @@ class CreateVendorsTable extends Migration
     {
         Schema::create('proveedor', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('codigo',10)
+            $table->String('codigo',10);
             $table->String('nombre',30);
             $table->String('telefono',8);
             $table->String('correo',60);

@@ -5,7 +5,6 @@
 @section('content-yield')
   
   <div class="container">
-    <div class="container">
       <div class="titulo ">
         <h2 class="text-left">Categorias</h2>
       </div>
@@ -25,12 +24,21 @@
 
     @endif
 
-    
-  
-    <!--form div-->
-    <div class="row">
-      
-      <div class="col-sm-12 col-md-4 card-container">
+
+<script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/script.js')}}"></script>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+  Add
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="col-sm-12 col-md-24 card-container">
          <div class="card card-outline-secondary border-info">
                         <div class="card-header border-info">
                             <h5 class="mb-0">Crear Nueva Categoria</h5>
@@ -52,14 +60,22 @@
                                             <textarea rows="6" name="descripcion" id="descripcion" class="form-control" required=""></textarea>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-secondary btn-lg float-right">Añadir</button>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>           
-      </div>  
+                                   
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Añadir</button>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+    <!--form div-->
+  <div class="row">
 
-      <div class="col-sm-12 col-md-8 card-container">
+      <div class="col-sm-12 col-md-18 card-container">
         <div class="card card-outline-secondary border-info">
           <div class="card-body">    
             <table class="table table-striped list-container">
@@ -86,8 +102,6 @@
          </div>
 
       </div>
-    </div>
-
   </div>
-
+</div>
 @endsection

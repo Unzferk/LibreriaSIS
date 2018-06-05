@@ -31,17 +31,17 @@
 
 	<a href="<?= URL::to('admin/productos/create'); ?>">
 		<img class="card-img-top" 
-		src="{{ asset('img/categoria1.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 	</a>
 	<a href="<?= URL::to('admin/productos/create'); ?>">
 		<img class="card-img-top" 
-		src="{{ asset('img/categoria2.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 	</a> 
 	<a href="<?= URL::to('admin/productos/create'); ?>">
 		<img class="card-img-top" 
-		src="{{ asset('img/producto0.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 
 	</a>

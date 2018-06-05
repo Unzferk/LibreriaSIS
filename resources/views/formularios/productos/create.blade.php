@@ -23,20 +23,23 @@
       </div>
 
     @endif
-
-
-<div class="container">
-    
-    <div class="row">
-      
-      <div class="col-sm-12 col-md-4 card-container">
-
-        <div class="card card-outline-secondary ">
-          <div class="card-header border-info">
-              <h5 class="mb-0">Crear Nuevo</h5>
-          </div>
-          <div class="card-body">
-            <form action="/admin/productos" method="POST" role="form">
+<script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script>
+<!-- Button trigger modal -->
+<h1><button type="button" class="btn btn-info button-circle" 
+data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+  +
+</button></h1>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby= "exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Nueva Categoria</h5>
+      </div>
+      <div class="modal-body">
+        <form action="/admin/productos" method="POST" role="form">
               {{csrf_field()}}
               <div class="form-group">
                 <label for="colFormLabelSm">Nombre</label>
@@ -71,19 +74,27 @@
                 <label for="descripcion colFormLabelSm">Descripcion</label>
                 <input name="descripcion" type="text" class="form-control form-control-sm" id="descripcion" aria-describedby="emailHelp" placeholder="Ingresa descripcion">
               </div>
-              <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
-              <button type="submit" class="btn btn-outline-secondary btn-sm">Importar</button>
-            </form>
-                            
+          </fieldset>
           </div>
-        </div> 
+          <div class="modal-footer">
 
-      </div>
 
-      <div class="col-sm-12 col-md-8 card-container">
+            <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+              <button type="submit" class="btn btn-outline-secondary btn-sm">Importar</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Close</button>
+
+          </div>
+          </form>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+      <div class="col-sm-12 col-md-18 card-container">
          <div class="card card-outline-secondary border-info">
           <div class="card-body">    
-            <table class="table table-striped list-container">
+            <table class="table table-striped list-container" id='Mytable'>
               <thead>
                 <tr>
                   <th scope="col">nombre</th>
@@ -113,9 +124,9 @@
       </div>
 
       
-    </div>
+</div>
 
-  </div>
+</div>
 	
 
 @endsection

@@ -22,16 +22,17 @@
         </ul> 
       </div>
 
-    @endif
+    @endif 
 
 
 <script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/script.js')}}"></script>
+
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-  Add
-</button>
+<h2><button type="button" class="btn btn-info button-circle" data-toggle="modal" data-target="#exampleModal">
+  +
+</button></h2>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,7 +79,7 @@
       <div class="col-sm-12 col-md-18 card-container">
         <div class="card card-outline-secondary border-info">
           <div class="card-body">    
-            <table class="table table-striped list-container">
+            <table class="table table-striped list-container" id='Mytable'>
               <thead>
                 <tr>
                   <th scope="col">Nombre</th>
@@ -90,6 +91,7 @@
                 @foreach($categorias as $categoria)
                 <tr>
                   <td>{{ $categoria->nombre }}</td>
+                  <td>{{ $categoria->descripcion }}</td>
                   <td>{{ $categoria->descripcion }}</td>
                 </tr>
 

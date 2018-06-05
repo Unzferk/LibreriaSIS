@@ -240,7 +240,19 @@ header span:hover{
     padding-top: 10px;
 }
 
+.agregar{
+    background: #50FA3E;
+}
 
+.button-circle{
+    width: 60px;
+    height: 60px;
+    padding: 6px 0px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.42857;
+}
 
 
 

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('plugin/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('icon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
 </head>
 <body>
     <header>
@@ -41,5 +42,10 @@
     <script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/script.js')}}"></script>
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+    
+    <script> $(document).ready( function () {
+        $('#Mytable').DataTable();} );
+        </script>
 </body>
 </html>

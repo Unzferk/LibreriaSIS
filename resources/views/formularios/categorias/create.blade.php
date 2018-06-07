@@ -4,12 +4,12 @@
 
 @section('content-yield')
   
-  <div class="container">
+<div class="container">
       <div class="titulo ">
         <h2 class="text-left">Categorias</h2>
       </div>      
       <hr/>
-    <!--errors-->
+    <!--errors--> 
     @if (count($errors)>0)
       
       <div class="alert alert-danger">
@@ -21,16 +21,16 @@
       </div>
 
     @endif 
-<script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
 
 
 <!-- Button trigger modal -->
-<h1><button type="button" class="btn btn-info button-circle" 
+<button type="button" class="btn btn-info button-circle" 
 data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-  +
-</button></h1>
+  <h1>+</h1>
+</button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -67,11 +67,10 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
 
 <!--form div-->
   <div class="row">
-
       <div class="col-sm-12 col-md-18 card-container">
         <div class="card card-outline-secondary border-info">
           <div class="card-body">    
-            <table class="table table-striped list-container" id='Mytable'>
+            <table class="table table-striped " id='Mytable'>
               <thead>
                 <tr>
                   <th scope="col">Nombre</th>
@@ -84,12 +83,12 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                 <tr>
                   <td>{{ $categoria->nombre }}</td>
                   <td>{{ $categoria->descripcion }}</td>
-                  <td>{{ $categoria->descripcion }}</td>
+                  <td>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Eliminar</button></td>
                 </tr>
-
                 @endforeach
               </tbody>
-              
             </table>
             {!! $categorias ->render() !!}
           </div>

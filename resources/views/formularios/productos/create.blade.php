@@ -77,12 +77,9 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
           </fieldset>
           </div>
           <div class="modal-footer">
-
-
-            <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
-              <button type="submit" class="btn btn-outline-secondary btn-sm">Importar</button>
-              <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Close</button>
-
+              <button type="submit" class="btn btn-secondary">Importar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
           </form>
     </div>
@@ -94,7 +91,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
       <div class="col-sm-12 col-md-18 card-container">
          <div class="card card-outline-secondary border-info">
           <div class="card-body">    
-            <table class="table table-striped list-container" id='Mytable'>
+            <table class="table table-striped" id='Mytable'>
               <thead>
                 <tr>
                   <th scope="col">nombre</th>
@@ -111,7 +108,8 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <td>{{ $producto->marca }}</td>
                   <td>{{ $producto->precio }}</td>
                   <td>{{ $producto->seccion }}</td>
-
+                  <td><button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Eliminar</button></td>
                 </tr>
 
                 @endforeach

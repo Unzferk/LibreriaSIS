@@ -11,19 +11,19 @@
 	<div class="container ">
 	
 	<a href="<?= URL::to('admin/productos/create'); ?>">
-		<img class="card-img-top" 
-		src="{{ asset('img/producto1.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		<img class="rounded float-left" 
+		src="{{ asset('img/producto1.png') }}" alt="Card image cap" class="img-responsive" style="width: 9rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 	</a>
 
 	<a href="<?= URL::to('admin/proveedores/create'); ?>">
 		<img class="card-img-top" 
-		src="{{ asset('img/proveedor.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		src="{{ asset('img/proveedor.png') }}" alt="Card image cap" class="img-responsive" style="width: 9rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 	</a>
 	<a href="<?= URL::to('admin/categorias/create'); ?>">
 		<img class="card-img-top" 
-		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 9rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 	</a>
 
@@ -31,17 +31,17 @@
 
 	<a href="<?= URL::to('admin/productos/create'); ?>">
 		<img class="card-img-top" 
-		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 9rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 	</a>
 	<a href="<?= URL::to('admin/productos/create'); ?>">
 		<img class="card-img-top" 
-		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 9rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 	</a> 
 	<a href="<?= URL::to('admin/productos/create'); ?>">
-		<img class="card-img-top" 
-		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 12rem; 
+		<img class="rounded float-left" 
+		src="{{ asset('img/categoria.png') }}" alt="Card image cap" class="img-responsive" style="width: 9rem; 
 		padding-left: 1%; margin-top: 30px; margin-left: 5%;">
 
 	</a>

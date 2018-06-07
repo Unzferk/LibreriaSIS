@@ -87,7 +87,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
       <div class="col-sm-12 col-md-18 card-container">
          <div class="card card-outline-secondary border-info">
           <div class="card-body">    
-            <table class="table table-striped list-container" id='Mytable'>
+            <table class="table table-striped" id='Mytable'>
               <thead>
                 <tr>
                   <th scope="col">nombre</th>
@@ -104,7 +104,8 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <td>{{ $proveedor->telefono }}</td>
                   <td>{{ $proveedor->correo }}</td>
                   <td>{{ $proveedor->direccion }}</td>
-                  <td>{{ $proveedor->opciones }}</td>
+                  <td><button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Eliminar</button></td>
                 </tr>
 
                 @endforeach

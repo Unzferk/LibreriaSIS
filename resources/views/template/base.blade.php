@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('plugin/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('icon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
 </head>
 <body>
     <header>
@@ -15,11 +16,8 @@
 
     <main>
         <!--<?= URL::to('admin/categorias/create'); ?>
-        
-            
-        
            
-            -->
+        -->
 
         <div class="content-menu">
             <li> <a href="/inicio"> <span class="lnr lnr-home icon1"></span><h6 class="text1">Inicio</h6></a></li>
@@ -41,5 +39,44 @@
     <script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/script.js')}}"></script>
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+    
+    <script> $(document).ready(function(){
+        $('#Mytable').DataTable({"language" : idioma_espanol}); } );
+        var idioma_espanol = {
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        }    
+    </script>
+
+    <script> $('#exampleModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var recipient = button.data('whatever') 
+      var modal = $(this)
+      modal.find('.modal-title').text('New message to ' + recipient)
+      modal.find('.modal-body input').val(recipient)
+      }) 
+    </script>
+
 </body>
 </html>

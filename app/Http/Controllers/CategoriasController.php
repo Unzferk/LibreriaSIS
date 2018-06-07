@@ -49,7 +49,6 @@ class CategoriasController extends Controller
         $categoria->save();
         return redirect($url);
     }
-
     /**
      * Display the specified resource.
      *

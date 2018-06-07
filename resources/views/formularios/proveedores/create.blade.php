@@ -22,16 +22,24 @@
 
     @endif
 
+<script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script>
 
-    <div class="row">
-      
-      <div class="col-sm-12 col-md-4 card-container">
 
-        <div class="card card-outline-secondary border-info">
-          <div class="card-header border-info">
-              <h5 class="mb-0">Crear Nuevo</h5>
-          </div>
-          <div class="card-body">
+<!-- Button trigger modal -->
+<h1><button type="button" class="btn btn-info button-circle" 
+data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+  +
+</button></h1>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Nueva Categoria</h5>
+      </div>
+      <div class="modal-body">
             <form action="/admin/proveedores" method="POST" role="form">
               {{csrf_field()}}
               <div class="form-group">
@@ -58,24 +66,28 @@
                   <input name="fax" type="text" class="form-control" id="fax"  placeholder="fax">
                 </div>
               </div>
-
               <div class="form-group">
                 <label for="direccion">Direccion</label>
                 <input name="direccion" type="text" class="form-control" id="direccion" aria-describedby="emailHelp" placeholder="Ingresa direccion">
               </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-                            
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
-        </div> 
-
+          </form>
       </div>
+    </div>
+  </div>
+</div>
 
-      <div class="col-sm-12 col-md-8 card-container">
+          
+
+    <div class="row">
+  
+      <div class="col-sm-12 col-md-18 card-container">
          <div class="card card-outline-secondary border-info">
           <div class="card-body">    
-            <table class="table table-striped list-container">
+            <table class="table table-striped" id='Mytable'>
               <thead>
                 <tr>
                   <th scope="col">nombre</th>
@@ -92,7 +104,8 @@
                   <td>{{ $proveedor->telefono }}</td>
                   <td>{{ $proveedor->correo }}</td>
                   <td>{{ $proveedor->direccion }}</td>
-                  <td>{{ $proveedor->opciones }}</td>
+                  <td><button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Eliminar</button></td>
                 </tr>
 
                 @endforeach

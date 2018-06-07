@@ -38,9 +38,10 @@ class ProveedoresController extends Controller
      */
     public function store(ProveedorRequest $request)
     {
-        $url = 'admin/proveedores/';
+        $url = 'admin/proveedores/create';
         
         $proveedor = new Proveedor;
+        $proveedor->codigo_pro = $request->input('codigo_pro');
         $proveedor->nombre = $request->input('nombre');
         $proveedor->telefono = $request->input('telefono');
         $proveedor->correo = $request->input('correo');

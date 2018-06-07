@@ -34,6 +34,10 @@ Route::get('login', function () {
 Route::group(['prefix' => 'admin'],function(){
 
 	Route::resource('categorias','CategoriasController');
+	Route::get('categorias/{id}/destroy', [
+		'uses' => 'CategoriasController@destroy',
+		'as' => 'admin.categorias.destroy'
+	]);
 
 	Route::resource('productos','ProductosController');
 

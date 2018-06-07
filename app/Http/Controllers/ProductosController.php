@@ -42,6 +42,7 @@ class ProductosController extends Controller
 
         $producto = new Producto;
         
+        $producto->codigo_pro = $request->input('codigo_pro');
         $producto->nombre = $request->input('nombre');
         $producto->marca = $request->input('marca');
         $producto->precio = $request->input('precio');

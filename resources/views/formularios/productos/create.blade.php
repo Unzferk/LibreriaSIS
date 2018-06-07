@@ -41,10 +41,16 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
       <div class="modal-body">
         <form action="/admin/productos" method="POST" role="form">
               {{csrf_field()}}
-              <div class="form-group">
-                <label for="colFormLabelSm">Nombre</label>
+              <div class="form-row ">
+                <div class="form-group col-6">
+                  <label for="categoria_id colFormLabelSm">Nombre</label>
                 <input name="nombre" type="text" class="form-control form-control-sm" id="nombre" placeholder="Lapiceros">
+               </div>
+                <div class="form-group col-6">
+                  <label for="seccion_id colFormLabelSm">Codigo</label>
+                <input name="codigo_pro" type="text" class="form-control form-control-sm" id="codigo_pro" placeholder="1234">
               </div>
+            </div>
               <div class="form-row">
                 <div class="form-group col-6">
                   <label for="marca colFormLabelSm">Marca</label>

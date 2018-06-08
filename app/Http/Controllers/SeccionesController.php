@@ -40,6 +40,7 @@ class SeccionesController extends Controller
 
         $seccion = new Seccion;
         $seccion->nombre = $request->input('nombre');
+        $seccion->descripcion = $request->input('descripcion');
         
         $seccion->save();
         return redirect($url);

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ asset('icon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+
+
+
 </head>
 <body>
     <header>
@@ -67,15 +70,6 @@
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
         }    
-    </script>
-
-    <script> $('#exampleModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) 
-      var recipient = button.data('whatever') 
-      var modal = $(this)
-      modal.find('.modal-title').text('New message to ' + recipient)
-      modal.find('.modal-body input').val(recipient)
-      }) 
     </script>
 
 </body>

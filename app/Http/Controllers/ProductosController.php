@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Seccion;
 use App\Http\Requests\ProductoRequest;
 
 class ProductosController extends Controller
@@ -25,9 +26,10 @@ class ProductosController extends Controller
      */
     public function create()
     {
-
+        $secciones = Seccion::all();
         $productos = Producto::orderBy('nombre','ASC')->paginate(5);
-        return view('formularios.productos.create')->with('productos', $productos);
+
+        return view('formularios.productos.create')->with('productos', $productos)->with('secciones', $secciones);
     }
 
     /**
@@ -44,11 +46,10 @@ class ProductosController extends Controller
         
         $producto->codigo_pro = $request->input('codigo_pro');
         $producto->nombre = $request->input('nombre');
-        $producto->codigo_pro = $request->input('codigo_pro');
         $producto->marca = $request->input('marca');
         $producto->precio = $request->input('precio');
         $producto->stock = $request->input('stock');
-        $producto->categoria_id = $request->input('categoria_id');
+        //$producto->categoria_id = $request->input('categoria_id');
         $producto->seccion_id = $request->input('seccion_id');
         $producto->descripcion = $request->input('descripcion');
 

@@ -6,7 +6,7 @@
   
 <div class="container">
       <div class="titulo ">
-        <h2 class="text-left">Categorias</h2>
+        <h2 class="text-left"><b>Categorias</b></h2>
       </div>      
       <hr/>
     <!--errors--> 
@@ -29,7 +29,7 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-info button-circle" 
 data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-  <h1>+</h1>
+  <b>+</b>
 </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -55,10 +55,10 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                                         </div>
                                     </div>
                                 </fieldset>
-          </div>
+        </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Añadir</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
           </div>
           </form>
     </div>
@@ -84,8 +84,10 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <td>{{ $categoria->nombre }}</td>
                   <td>{{ $categoria->descripcion }}</td>
                   <td>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Editar</button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Eliminar</button></td>
+                    <a href=" {{ route('admin.categorias.destroy', $categoria->id) }} " class="btn btn-danger">Eliminar</a>
+      
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#cateEditModal" data-ide=" {{$categoria->id}} " data-nombre= "{{$categoria->nombre}}" data-descripcion= "{{$categoria->descripcion}}" data-dismiss="modal"  >Editar</button>
+                    </td>
                 </tr>
                 @endforeach
               </tbody>
@@ -96,5 +98,58 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
 
       </div>
   </div>
+
+<!-- Edit Modal-->
+<div class="modal fade" id="cateEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Categoria</h5>
+      </div>
+      <div class="modal-body">
+
+        <form class="form"  action="{{route('categorias.update','test')}}" method="POST" role="form" autocomplete="off">
+                               {{csrf_field()}}
+                               {{method_field('patch')}}
+
+                                <fieldset>  
+                                    <input type="hidden" name="ide" id="ide">
+                                    <label for="nombre" class="mb-0">Nombre</label>
+                                    <div class="row mb-1">
+                                        <div class="col-lg-12">
+                                            <input type="text" name="nombre" id="nombre" class="form-control" required="">
+                                        </div>
+                                    </div>
+                                    <label for="descripcion" class="mb-0">Descripcion</label>
+                                    <div class="row mb-1">
+                                        <div class="col-lg-12">
+                                            <textarea rows="6" name="descripcion" id="descripcion" class="form-control" required=""></textarea>
+                                        </div>
+                                    </div>
+                                </fieldset>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+          </div>
+          </form>
+    </div>
+  </div>
 </div>
+</div>
+
+<script>
+  $('#cateEditModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var mnombre = button.data('nombre')
+  var mdescripcion = button.data('descripcion') 
+  var mide = button.data('ide')
+  var modal = $(this)
+  
+  modal.find('.modal-body #ide').val(mide);
+  modal.find('.modal-body #nombre').val(mnombre);
+  modal.find('.modal-body #descripcion').val(mdescripcion);
+  })
+</script>
+
 @endsection

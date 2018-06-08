@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Categoria; 
 use App\Http\Requests\CategoriaRequest;
+
 use Excel;
 use Illuminate\Support\Facades\Input;
 
@@ -18,6 +20,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
+
         $categorias = Categoria::orderBy('nombre','ASC')->paginate(5);
         return view('formularios.categorias.index')->with('categorias',$categorias);
     }
@@ -29,6 +32,7 @@ class CategoriasController extends Controller
      */
     public function create()
     {
+
         $categorias = Categoria::orderBy('nombre','ASC')->paginate(5);
         return view('formularios.categorias.create')->with('categorias',$categorias);
     }
@@ -39,15 +43,33 @@ class CategoriasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoriaRequest $request)
+    public function store(Request $request)
     {
         $url = ('admin/categorias/create');
 
-        $categoria = new Categoria;
-        $categoria->nombre = $request->input('nombre');
-        $categoria->descripcion = $request->input('descripcion');
-        $categoria->save();
-        return redirect($url);
+        $rules = array(
+         'nombre' => 'required|string|unique:categoria,nombre|min:3|max:60',
+         'descripcion' => 'max:140',
+        );
+        $messages = array(
+          'nombre.required' => 'El campo es obligatorio',
+          'nombre.string' => 'Solo se permite letras',
+          'nombre.unique' => 'Este nombre ya existe',
+          'descripcion' => 'Solo se permite 140 carateres',
+        );
+
+        $validator = Validator::make(Input::all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect($url)->withErrors($validator);
+        } else if($validator->passes()) {
+            $categoria = new Categoria;
+            $categoria->nombre = $request->input('nombre');
+            $categoria->descripcion = $request->input('descripcion');
+            $categoria->save();
+            return redirect($url);
+        }
+
     }
     /**
      * Display the specified resource.
@@ -79,15 +101,14 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $url = ('admin/categorias/create');
 
-        $categoria = Categoria::find($id);
-        $categoria->fill($request->all());
-        $categoria->save();
+        $categoria = Categoria::findOrFail($request->ide);
+        $categoria->update($request->all());
 
-        return redirect($url);
+        return back();
     }
 
     /**

@@ -15,8 +15,8 @@ class CreateSectionTable extends Migration
     {
         Schema::create('seccion', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('nombre',30);
-            $table->String('descripcion',30);
+            $table->String('nombre',30)->unique();
+            $table->String('descripcion',30)->nullable();
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@
 @section('content-yield')
     <div class="container">
       <div class="titulo">
-        <h2 class="text-left">Proveedores</h2>
+        <h2 class="text-left"> <b>Proveedores</b></h2>
       </div>
       <hr />
       <!--errors-->
@@ -28,16 +28,16 @@
 
 
 <!-- Button trigger modal -->
-<h1><button type="button" class="btn btn-info button-circle" 
+<button type="button" class="btn btn-info button-circle" 
 data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-  +
-</button></h1>
+  <b>+</b>
+</button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Crear Nueva Categoria</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Proveedor</h5>
       </div>
       <div class="modal-body">
             <form action="/admin/proveedores" method="POST" role="form">
@@ -71,8 +71,8 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                 <input name="direccion" type="text" class="form-control" id="direccion" aria-describedby="emailHelp" placeholder="Ingresa direccion">
               </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
           </div>
           </form>
       </div>

@@ -10,6 +10,8 @@
   <div class="form-group">
     <label for="nombre">Nombre</label>
     <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingresa el nombre del area">
+    <label for="descripcion">Descripcion</label>
+    <input name="descripcion" type="text" class="form-control" id="descripcion" aria-describedby="emailHelp" placeholder="Ingresa la descripcion">
   </div>
  
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -28,7 +30,7 @@
     @foreach($secciones as $seccion)
     <tr>
       <td>{{ $seccion->nombre }}</td>
-      
+      <td>{{ $seccion->descripcion }}</td>
     </tr>
 
     @endforeach

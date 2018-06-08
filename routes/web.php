@@ -31,6 +31,10 @@ Route::get('login', function () {
     return view('login');
 });
 
+Route::get('stock',function(){
+	return view('stock');
+});
+
 Route::group(['prefix' => 'admin'],function(){
 
 	Route::resource('categorias','CategoriasController');
@@ -53,3 +57,4 @@ Route::group(['prefix' => 'admin'],function(){
 	Route::resource('secciones','SeccionesController');
 
 });
+

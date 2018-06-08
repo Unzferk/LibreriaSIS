@@ -19,7 +19,11 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        //
+
+        $secciones = Seccion::all();
+        $productos = Producto::orderBy('nombre','ASC')->paginate(5);
+
+        return view('stock')->with('productos', $productos)->with('secciones', $secciones);
     }
 
     /**

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+//use Validator;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Seccion;
-use App\Http\Requests\ProductoRequest;
+use App\Http\Requests\ProductoRequest; 
+use Excel;
+use Illuminate\Support\Facades\Input;
 
 class ProductosController extends Controller
 {
@@ -89,7 +92,12 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $url = ('admin/productos/create');
+
+        $producto = Producto::findOrFail($request->ide);
+        $producto->update($request->all());
+
+        return back();
     }
 
     /**
@@ -100,6 +108,11 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = Producto::find($id);
+        $producto->delete();
+
+        $url = ('admin/productos/create');
+
+        return redirect($url);
     }
 }

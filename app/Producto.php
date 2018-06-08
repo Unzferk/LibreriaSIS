@@ -20,6 +20,9 @@ class Producto extends Model
     public function proveedores(){
     	return $this->belongsToMany('App\Proveedor');
     }
+    public function productos(){
+        return $this->belongsToMany('App\Producto');
+    }
 
 }
 

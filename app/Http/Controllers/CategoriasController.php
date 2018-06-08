@@ -32,7 +32,6 @@ class CategoriasController extends Controller
      */
     public function create()
     {
-
         $categorias = Categoria::orderBy('nombre','ASC')->paginate(5);
         return view('formularios.categorias.create')->with('categorias',$categorias);
     }

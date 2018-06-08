@@ -10,6 +10,7 @@
       </div>      
       <hr/>
     <!--errors--> 
+  
     @if (count($errors)>0)
       
       <div class="alert alert-danger">

@@ -25,7 +25,7 @@ class ProveedorRequest extends FormRequest
     {
         return [
             'nombre' => 'required|max:35',
-            'telefono' => 'required|numeric|max:8|min:7',
+            'telefono' => 'required|max:8|min:7',
             'correo' => 'required|max:30',
             'pag_web' => 'max:50',
             'fax' => 'max:30',

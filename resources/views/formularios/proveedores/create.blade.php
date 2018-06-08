@@ -42,33 +42,39 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
       <div class="modal-body">
             <form action="/admin/proveedores" method="POST" role="form">
               {{csrf_field()}}
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Juan Perez">
+              <div class="form-row">
+                <div class="form-group col-8">
+                  <label for="nombre colFormLabelSm">Nombre</label>
+                <input name="nombre" type="text" class="form-control form-control-sm" id="nombre" placeholder="Lapiceros">
+               </div>
+                <div class="form-group col-4">
+                  <label for="codigo_prv colFormLabelSm">Código</label>
+                <input name="codigo_prv" type="text" class="form-control form-control-sm" id="codigo_prv" placeholder="1234">
+              </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-6">
                   <label for="correo">Correo</label>
-                  <input name="correo" type="text" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="ejemplo@xxx.com">
+                  <input name="correo" type="text" class="form-control form-control-sm" id="correo" aria-describedby="emailHelp" placeholder="ejemplo@xxx.com">
                 </div>
                 <div class="form-group col-6">
                   <label for="pag_web">Pag:Web</label>
-                  <input name="pag_web" type="text" class="form-control" id="pag_web" aria-describedby="emailHelp" placeholder="www.ejemplo.com">
+                  <input name="pag_web" type="text" class="form-control form-control-sm" id="pag_web" aria-describedby="emailHelp" placeholder="www.ejemplo.com">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-6">
                   <label for="telefono">Telefono</label>
-                  <input name="telefono" type="text" class="form-control" id="telefono" placeholder="7777777">
+                  <input name="telefono" type="text" class="form-control form-control-sm" id="telefono" placeholder="7777777">
                 </div>
                 <div class="form-group col-6">
                   <label for="fax">Fax</label>
-                  <input name="fax" type="text" class="form-control" id="fax"  placeholder="fax">
+                  <input name="fax" type="text" class="form-control form-control-sm" id="fax"  placeholder="fax">
                 </div>
               </div>
               <div class="form-group">
                 <label for="direccion">Direccion</label>
-                <input name="direccion" type="text" class="form-control" id="direccion" aria-describedby="emailHelp" placeholder="Ingresa direccion">
+                <input name="direccion" type="text" class="form-control form-control-sm" id="direccion" aria-describedby="emailHelp" placeholder="Ingresa direccion">
               </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Guardar</button>
@@ -90,6 +96,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
             <table class="table table-striped" id='Mytable'>
               <thead>
                 <tr>
+                  <th scope="col">codigo</th>
                   <th scope="col">nombre</th>
                   <th scope="col">telefono</th>
                   <th scope="col">correo</th>
@@ -100,12 +107,15 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
               <tbody>
                 @foreach($proveedores as $proveedor)
                 <tr>
+                  <td>{{ $proveedor->codigo_prv }}</td>
                   <td>{{ $proveedor->nombre }}</td>
                   <td>{{ $proveedor->telefono }}</td>
                   <td>{{ $proveedor->correo }}</td>
                   <td>{{ $proveedor->direccion }}</td>
-                  <td><button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Editar</button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Eliminar</button></td>
+                  <td>
+                    <a href=" {{ route('admin.proveedores.destroy', $proveedor->id) }} " class="btn btn-danger">Eliminar</a>
+      
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#proveEditModal" data-ide=" {{$proveedor->id}} " data-nombre= "{{$proveedor->nombre}}" data-codigo= "{{$proveedor->codigo_prv}}" data-correo= "{{$proveedor->correo}}" data-pag_web= "{{$proveedor->pag_web}}" data-telefono= "{{$proveedor->telefono}}" data-fax= "{{$proveedor->fax}}" data-direccion= "{{$proveedor->direccion}}" data-dismiss="modal">Editar</button>
                 </tr>
 
                 @endforeach
@@ -115,71 +125,94 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
             {!! $proveedores ->render() !!}
           </div>
          </div>    
-      </div>
-
-      
-
-    
+      </div>    
 
     </div>
 
-  </div>
 
 
-  <!--
-	<form action="/admin/proveedores" method="POST" role="form">
-		{{csrf_field()}}
-  <div class="form-group">
-    <label for="nombre">Nombre</label>
-    <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingresa el nombre del proveedor">
+<!-- Modal Edit-->
+<div class="modal fade" id="proveEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Proveedor</h5>
+      </div>
+      <div class="modal-body">
+            
+            <form action="{{route('proveedores.update','test')}}" method="POST" role="form">
+              {{csrf_field()}}
+              {{method_field('patch')}}
+              <input type="hidden" name="ide" id="ide">
+              <div class="form-row">
+                <div class="form-group col-8">
+                  <label for="nombre colFormLabelSm">Nombre</label>
+                <input name="nombre" type="text" class="form-control form-control-sm" id="nombre" placeholder="Lapiceros">
+               </div>
+                <div class="form-group col-4">
+                  <label for="codigo_prv colFormLabelSm">Código</label>
+                <input name="codigo_prv" type="text" class="form-control form-control-sm" id="codigo_prv" placeholder="1234">
+              </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="correo">Correo</label>
+                  <input name="correo" type="text" class="form-control form-control-sm" id="correo" aria-describedby="emailHelp" placeholder="ejemplo@xxx.com">
+                </div>
+                <div class="form-group col-6">
+                  <label for="pag_web">Pag:Web</label>
+                  <input name="pag_web" type="text" class="form-control form-control-sm" id="pag_web" aria-describedby="emailHelp" placeholder="www.ejemplo.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="telefono">Telefono</label>
+                  <input name="telefono" type="text" class="form-control form-control-sm" id="telefono" placeholder="7777777">
+                </div>
+                <div class="form-group col-6">
+                  <label for="fax">Fax</label>
+                  <input name="fax" type="text" class="form-control form-control-sm" id="fax"  placeholder="fax">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="direccion">Direccion</label>
+                <input name="direccion" type="text" class="form-control form-control-sm" id="direccion" aria-describedby="emailHelp" placeholder="Ingresa direccion">
+              </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+          </div>
+          </form>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="form-group">
-    <label for="telefono">Telefono</label>
-    <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Ingresa telefono">
-  </div>
 
-  <div class="form-group">
-    <label for="correo">Correo</label>
-    <input name="correo" type="text" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingresa el correo del proveedor">
   </div>
-
-  <div class="form-group">
-    <label for="pag_web">Pag:Web</label>
-    <input name="pag_web" type="text" class="form-control" id="pag_web" aria-describedby="emailHelp" placeholder="Ingresa pag_web">
-  </div>
+<script>
+  $('#proveEditModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var mide = button.data('ide')
+  var mnombre = button.data('nombre')
+  var mcodigo = button.data('codigo')
+  var mcorreo = button.data('correo')
+  var mpag_web = button.data('pag_web')
+  var mtelefono = button.data('telefono')
+  var mfax = button.data('fax')
+  var mdireccion = button.data('direccion') 
   
-  <div class="form-group">
-    <label for="fax">Fax</label>
-    <input name="fax" type="text" class="form-control" id="fax"  placeholder="Ingresa el fax del proveedor">
-  </div>
+  var modal = $(this)
+  
+  modal.find('.modal-body #ide').val(mide);
+  modal.find('.modal-body #nombre').val(mnombre);
+  modal.find('.modal-body #codigo_prv').val(mcodigo);
+  modal.find('.modal-body #correo').val(mcorreo);
+  modal.find('.modal-body #pag_web').val(mpag_web);
+  modal.find('.modal-body #telefono').val(mtelefono);
+  modal.find('.modal-body #fax').val(mfax);
+  modal.find('.modal-body #direccion').val(mdireccion);
+  })
+</script>
 
-  <div class="form-group">
-    <label for="direccion">Direccion</label>
-    <input name="direccion" type="text" class="form-control" id="direccion" aria-describedby="emailHelp" placeholder="Ingresa direccion">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-	
-	<br>
-
-
-
-	<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">nombre</th>
-      <th scope="col">telefono</th>
-      <th scope="col">correo</th>
-      <th scope="col">pag-web</th>
-      <th scope="col">fax</th>
-      <th scope="col">direccion</th>
-    </tr>
-  </thead>
-  <tbody>
-  	
-  </tbody>
-</table>
--->
 @endsection

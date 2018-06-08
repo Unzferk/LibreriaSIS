@@ -41,7 +41,7 @@ class ProveedoresController extends Controller
         $url = 'admin/proveedores/create';
         
         $proveedor = new Proveedor;
-        $proveedor->codigo_pro = $request->input('codigo_pro');
+        $proveedor->codigo_prv = $request->input('codigo_prv');
         $proveedor->nombre = $request->input('nombre');
         $proveedor->telefono = $request->input('telefono');
         $proveedor->correo = $request->input('correo');
@@ -83,9 +83,13 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+
+        $proveedor = Proveedor::findOrFail($request->ide);
+        $proveedor->update($request->all());
+
+        return back();
     }
 
     /**
@@ -96,6 +100,11 @@ class ProveedoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $url = ('admin/proveedores/create');
+        
+        $proveedor = Proveedor::find($id);
+        $proveedor->delete();
+
+        return redirect($url);
     }
 }

@@ -10,7 +10,11 @@
 <body>
     <header>
         <span class="lnr lnr-menu show"></span>
-        <img src="img/irrbe.png" width="300" height="50" class="img-responsive" style="padding-left: 5%; margin-top: 5px;">        
+        <img src="img/irrbe.png" width="300" height="50" class="img-responsive" style="padding-left: 5%; margin-top: 5px;">    
+
+    
+
+
     </header>
 
     <main>
@@ -48,5 +52,6 @@
     <script src="plugin/bootstrap/js/bootstrap.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
+    <script>$('#datetimepicker').data("DateTimePicker").FUNCTION()</script>
 </body>
 </html>

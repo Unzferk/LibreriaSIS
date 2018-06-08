@@ -124,7 +124,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <td>
                     <a href=" {{ route('admin.productos.destroy', $producto->id) }} " class="btn btn-danger btn-sm">Eliminar</a>
       
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#productEditModal" data-ide=" {{$producto->id}} " data-nombre= "{{$producto->nombre}}" data-codigo_pro= "{{$producto->codigo_pro}}" data-marca= "{{$producto->marca}}" data-precio= "{{$producto->precio}}" data-stock= "{{$producto->stock}}" data-seccion= "{{$producto->seccion_id}}" data-descripcion= "{{$producto->descripcion}}" data-dismiss="modal" >Editar</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#productEditModal" data-ide=" {{$producto->id}} " data-nombre= "{{$producto->nombre}}" data-codigo_pro= "{{$producto->codigo_pro}}" data-marca= "{{$producto->marca}}" data-precio= "{{$producto->precio}}" data-stock= "{{$producto->stock}}" data-seccion_id= "{{$producto->seccion_id}}" data-descripcion= "{{$producto->descripcion}}" data-dismiss="modal" >Editar</button>
 
                      
                   </td>
@@ -159,25 +159,20 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
               <fieldset>  
                 <div class="form-row ">
                 <div class="form-group col-6">
-                  <input type="hidden" name="ide" id="ide">
                   <label for="nombre colFormLabelSm">Nombre</label>
-                  <input type="text" name="nombre" id="nombre" class="form-control" required="">
+                  <input type="text" name="nombre" id="nombre" class="form-control form-control-sm" required="">
                 </div>
                 <div class="form-group col-6">
-                  <input type="hidden" name="codigo_pro" id="codigo_pro">
                   <label for="codigo_pro colFormLabelSm">Codigo</label>
                   <input name="codigo_pro" type="text" class="form-control form-control-sm" id="codigo_pro" required="">
                 </div>
-                <div class="form-group col-6">
-                  <label for="codigo_pro colFormLabelSm">Codigo</label>
-                  <input name="codigo_pro" type="text" class="form-control form-control-sm" id="codigo_pro" placeholder="1234">
-                </div>
+              </div>
               <div class="form-row">
                 <div class="form-group col-6">
                   <label for="marca colFormLabelSm">Marca</label>
                   <input name="marca" type="text" class="form-control form-control-sm" id="marca" placeholder="Sabonis">
                 </div>
-              </div>
+              
                 <div class="form-group col-3">
                   <label for="precio colFormLabelSm">Precio</label>
                   <input name="precio" type="text" class="form-control form-control-sm" id="precio"  placeholder="99.9">
@@ -186,6 +181,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <label for="stock colFormLabelSm">Stock</label>
                   <input name="stock" type="text" class="form-control form-control-sm" id="stock"  placeholder="999">
                 </div>
+              </div>
               <div class="form-row ">
                 <div class="form-group col-6">
                   <label for="seccion_id colFormLabelSm">Seccion_id</label>

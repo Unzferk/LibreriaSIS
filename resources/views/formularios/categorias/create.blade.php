@@ -85,7 +85,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <td>{{ $categoria->nombre }}</td>
                   <td>{{ $categoria->descripcion }}</td>
                   <td>
-                    <a href=" {{ route('admin.categorias.destroy', $categoria->id) }} " class="btn btn-danger">Eliminar</a>
+                    <a href=" {{ route('admin.categorias.destroy', $categoria->id) }} " class="btn btn-danger btn-sm"><b>X</b></a>
       
                     <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#cateEditModal" data-ide=" {{$categoria->id}} " data-nombre= "{{$categoria->nombre}}" data-descripcion= "{{$categoria->descripcion}}" data-dismiss="modal"  >Editar</button>
                     </td>

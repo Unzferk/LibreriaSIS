@@ -121,8 +121,11 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <td>{{ $producto->seccion->nombre }}</td>
                   <td>{{ $producto->descripcion }}</td>
                   <td>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Editar</button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Eliminar</button>
+                    <a href=" {{ route('admin.productos.destroy', $producto->id) }} " class="btn btn-danger btn-sm">Eliminar</a>
+      
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#productEditModal" data-ide=" {{$producto->id}} " data-nombre= "{{$producto->nombre}}" data-codigo_pro= "{{$producto->codigo_pro}}" data-marca= "{{$producto->marca}}" data-precio= "{{$producto->precio}}" data-stock= "{{$producto->stock}}" data-seccion= "{{$producto->seccion_id}}" data-descripcion= "{{$producto->descripcion}}" data-dismiss="modal" >Editar</button>
+
+                     
                   </td>
                 </tr>
 
@@ -140,5 +143,96 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
 
 </div>
   
+<!-- Edit Modal-->
+<div class="modal fade" id="productEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+      </div>
+      <div class="modal-body">
 
+        <form class="form"  action="{{route('productos.update','test')}}" method="POST" role="form" autocomplete="off">
+              {{csrf_field()}}
+              {{method_field('patch')}}
+              <fieldset>  
+                <div class="form-row ">
+                <div class="form-group col-6">
+                  <input type="hidden" name="ide" id="ide">
+                  <label for="nombre colFormLabelSm">Nombre</label>
+                  <input type="text" name="nombre" id="nombre" class="form-control" required="">
+                </div>
+                <div class="form-group col-6">
+                  <input type="hidden" name="codigo_pro" id="codigo_pro">
+                  <label for="codigo_pro colFormLabelSm">Codigo</label>
+                  <input name="codigo_pro" type="text" class="form-control form-control-sm" id="codigo_pro" required="">
+                </div>
+                <div class="form-group col-6">
+                  <label for="codigo_pro colFormLabelSm">Codigo</label>
+                  <input name="codigo_pro" type="text" class="form-control form-control-sm" id="codigo_pro" placeholder="1234">
+                </div>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="marca colFormLabelSm">Marca</label>
+                  <input name="marca" type="text" class="form-control form-control-sm" id="marca" placeholder="Sabonis">
+                </div>
+              </div>
+                <div class="form-group col-3">
+                  <label for="precio colFormLabelSm">Precio</label>
+                  <input name="precio" type="text" class="form-control form-control-sm" id="precio"  placeholder="99.9">
+                </div>
+                <div class="form-group col-3">
+                  <label for="stock colFormLabelSm">Stock</label>
+                  <input name="stock" type="text" class="form-control form-control-sm" id="stock"  placeholder="999">
+                </div>
+              <div class="form-row ">
+                <div class="form-group col-6">
+                  <label for="seccion_id colFormLabelSm">Seccion_id</label>
+                  <select name="seccion_id" id="seccion_id" class="form-control form-control-sm" >
+                    @foreach( $secciones as $seccion )
+                      <option value=" {{$seccion['id']}} ">{{$seccion['nombre']}} </option>
+                    @endforeach
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="descripcion colFormLabelSm">Descripcion</label>
+                <input name="descripcion" type="text" class="form-control form-control-sm" id="descripcion" aria-describedby="emailHelp" placeholder="Ingresa descripcion">
+              </div>
+        </fieldset>
+        </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+          </div>
+          </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  $('#productEditModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var mnombre = button.data('nombre')
+  var mcodigo_pro = button.data('codigo_pro')
+  var mmarca = button.data('marca')
+  var mprecio = button.data('precio')
+  var mstock = button.data('stock')
+  var mseccion_id = button.data('seccion_id')
+  var mdescripcion = button.data('descripcion') 
+  var mide = button.data('ide')
+  var modal = $(this)
+  
+  modal.find('.modal-body #ide').val(mide);
+  modal.find('.modal-body #nombre').val(mnombre);
+  modal.find('.modal-body #codigo_pro').val(mcodigo_pro);
+  modal.find('.modal-body #marca').val(mmarca);
+  modal.find('.modal-body #precio').val(mprecio);
+  modal.find('.modal-body #stock').val(mstock);
+  modal.find('.modal-body #seccion_id').val(mseccion_id);
+  modal.find('.modal-body #descripcion').val(mdescripcion);
+  })
+</script>
 @endsection

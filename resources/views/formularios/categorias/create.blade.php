@@ -46,7 +46,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                                     <label for="nombre" class="mb-0">Nombre</label>
                                     <div class="row mb-1">
                                         <div class="col-lg-12">
-                                            <input type="text" name="nombre" id="nombre" class="form-control" required="">
+                                            <input name="nombre" id="nombre" class="form-control" required="">
                                         </div>
                                     </div>
                                     <label for="descripcion" class="mb-0">Descripcion</label>

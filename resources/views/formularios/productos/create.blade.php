@@ -70,6 +70,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                 <div class="form-group col-6">
                   <label for="seccion_id colFormLabelSm">Seccion_id</label>
                   <select name="seccion_id" id="seccion_id" class="form-control form-control-sm" >
+                    <option value="">seleccione una seccion</option>
                     @foreach( $secciones as $seccion )
                       <option value=" {{$seccion['id']}} ">{{$seccion['nombre']}} </option>
                     @endforeach

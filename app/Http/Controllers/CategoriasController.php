@@ -49,13 +49,13 @@ class CategoriasController extends Controller
 
         $rules = array(
          'nombre' => 'required|string|unique:categoria,nombre|min:3|max:60',
-         'descripcion' => 'max:140',
+         'descripcion' => 'max:140'
         );
         $messages = array(
           'nombre.required' => 'El campo es obligatorio',
           'nombre.string' => 'Solo se permite letras',
           'nombre.unique' => 'Este nombre ya existe',
-          'descripcion' => 'Solo se permite 140 carateres',
+          'descripcion' => 'Solo se permite 140 carateres'
         );
 
         $validator = Validator::make(Input::all(), $rules, $messages);
@@ -127,52 +127,4 @@ class CategoriasController extends Controller
         return redirect($url);
     }
 
-   /* public function import_categorias(Request $request)
-  {
-    $file = Input::file('categoriasFile');
-    $rules = array(
-      'categoriasFile' => 'required|mimes:xlsx',
-    );
-    $messages = array(
-      'required' => 'ningun archivo xlsx seleccionado',
-      'mimes' => 'el formato no es compatible'
-    );
-    $validator = Validator::make(Input::all(), $rules, $messages);
-    if ($validator->fails()) {
-
-      return redirect('import_categorias')->withErrors($validator);
-
-    } else if(!$this->valid_document($file)) {
-
-      return redirect('import_categorias')->with('bad_status', 'Documento invalido');
-
-    } else if($validator->passes()) {
-
-      Excel::load($file, function($reader)
-      {
-        foreach ($reader->get() as $key => $value) {
-
-          if(!is_null($value->fecha_ini) &&
-             !is_null($value->fecha_fin) &&
-             !is_null($value->periodo)) {
-
-            $date = AcademicTerm::where('date_ini', $value->fecha_ini)
-                                ->where('date_fin', $value->fecha_fin)
-                                ->where('period', $value->periodo)
-                                ->first();
-
-            if(is_null($date)) {
-            $date = new AcademicTerm();
-            $date->date_ini = $value->fecha_ini;
-            $date->date_fin = $value->fecha_fin;
-            $date->period = $value->periodo;
-            $date->save();
-            }
-            
-          }
-        }
-      });
-    }
-    return redirect('import_categorias')->with('status', 'Los cambios se realizaron con exito.');
-  }*/
 }

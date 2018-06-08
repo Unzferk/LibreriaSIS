@@ -10,15 +10,10 @@
 <body>
     <header>
         <span class="lnr lnr-menu show"></span>
-        <img src="img/irrbe.png" width="300" height="50" class="img-responsive" style="padding-left: 5%; margin-top: 5px;">    
-
-    
-
-
+        <img src="img/irbe6.png" width="300" height="50" class="img-responsive" style="padding-left: 5%; margin-top: 5px;">  
     </header>
 
     <main>
-
         <div class="content-menu">
             <li><span class="lnr lnr-home icon1"></span><h6 class="text1">Inicio</h6></li>
             <li><span class="lnr lnr-film-play icon2"></span><h6 class="text2">Videos</h6></li>

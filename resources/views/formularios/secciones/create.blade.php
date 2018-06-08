@@ -20,20 +20,20 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
   <b>+</b>
 </button>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade container-flui" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Crear Nueva Categoria</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Crear Nueva Seccion</h5>
       </div>
       <div class="modal-body">
       <form action="/admin/secciones" method="POST" role="form">
         {{csrf_field()}}
         <div class="form-group">
         <label for="nombre">Nombre</label>
-        <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingresa el nombre del area">
+        <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingresa el nombre de la seccion">
         <label for="descripcion">Descripcion</label>
-        <input name="descripcion" type="text" class="form-control" id="descripcion" aria-describedby="emailHelp" placeholder="Ingresa la descripcion">
+        <textarea rows="6" name="descripcion" type="text" class="form-control" id="descripcion" aria-describedby="emailHelp" placeholder="Ingresa la descripcion"></textarea>
         </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Guardar</button>
@@ -56,6 +56,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
     <tr>
       <th scope="col">nombre</th>
       <th scope="col">descripcion</th>
+      <th scope="col">opciones</th>
     </tr>
   </thead>
   <tbody>
@@ -63,16 +64,70 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
     <tr>
       <td>{{ $seccion->nombre }}</td>
       <td>{{ $seccion->descripcion }}</td>
+      <td><a href=" {{ route('admin.secciones.destroy', $seccion->id) }} " class="btn btn-danger btn-sm"><b>X</b></a>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#seccEditModal" data-ide=" {{$seccion->id}} " data-nombre= "{{$seccion->nombre}}" data-descripcion= "{{$seccion->descripcion}}" data-dismiss="modal"  >Editar</button>
+                    </td>
+      </td>
     </tr>
 
     @endforeach
   </tbody>
   {!! $secciones ->render() !!}
 </table>
-
-@endsection
 </div>
-         </div>
-
+</div>
+</div>
+</div>
+<!-- Edit Modal-->
+<div class="modal fade container-flui" id="seccEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Secciones</h5>
       </div>
+      <div class="modal-body">
+
+        <form class="form"  action="{{route('secciones.update','test')}}" method="POST" role="form" autocomplete="off">
+                               {{csrf_field()}}
+                               {{method_field('patch')}}
+
+                                <fieldset>  
+                                    <input type="hidden" name="ide" id="ide">
+                                    <label for="nombre" class="mb-0">Nombre</label>
+                                    <div class="row mb-1">
+                                        <div class="col-lg-12">
+                                            <input type="text" name="nombre" id="nombre" class="form-control" required="">
+                                        </div>
+                                    </div>
+                                    <label for="descripcion" class="mb-0">Descripcion</label>
+                                    <div class="row mb-1">
+                                        <div class="col-lg-12">
+                                            <textarea rows="6" name="descripcion" id="descripcion" class="form-control" required=""></textarea>
+                                        </div>
+                                    </div>
+                                </fieldset>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+          </div>
+          </form>
+    </div>
   </div>
+</div>
+</div>
+
+<script>
+  $('#seccEditModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var mnombre = button.data('nombre')
+  var mdescripcion = button.data('descripcion') 
+  var mide = button.data('ide')
+  var modal = $(this)
+  
+  modal.find('.modal-body #ide').val(mide);
+  modal.find('.modal-body #nombre').val(mnombre);
+  modal.find('.modal-body #descripcion').val(mdescripcion);
+  })
+</script>
+@endsection

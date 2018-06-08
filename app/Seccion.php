@@ -10,6 +10,10 @@ class Seccion extends Model
 
     protected $fillable = ['nombre','descripcion'];
 
+    public function secciones(){
+    	return $this->hasMany('App\Seccion');
+    }
+
     public function productos(){
     	return $this->hasMany('App\Producto');
     }

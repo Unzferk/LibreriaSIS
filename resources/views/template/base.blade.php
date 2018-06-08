@@ -15,7 +15,7 @@
 <body>
     <header>
         <span class="lnr lnr-menu show"></span>
-        <img src="{{ asset('img/irrbe.png') }}" width="300" height="47" class="img-responsive" style="padding-left: 5%; margin-top: 5px; margin-left: 33%;">        
+        <img src="{{ asset('img/irbe6.png') }}" width="300" height="47" class="img-responsive" style="padding-left: 5%; margin-top: 5px; margin-left: 33%;">        
     </header>
 
     <main>

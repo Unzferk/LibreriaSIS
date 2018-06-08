@@ -38,15 +38,15 @@ Route::get('stock',function(){
 Route::group(['prefix' => 'admin'],function(){
 
 	Route::resource('categorias','CategoriasController');
-	Route::get('categorias/{id}/destroy', [
-		'uses' => 'CategoriasController@destroy',
-		'as' => 'admin.categorias.destroy'
-	]);
+		Route::get('categorias/{id}/destroy', [
+			'uses' => 'CategoriasController@destroy',
+			'as' => 'admin.categorias.destroy'
+		]);
 	Route::resource('productos','ProductosController');
-	Route::get('productos/{id}/destroy', [
-		'uses' => 'ProductosController@destroy',
-		'as' => 'admin.productos.destroy'
-	]);
+		Route::get('productos/{id}/destroy', [
+			'uses' => 'ProductosController@destroy',
+			'as' => 'admin.productos.destroy'
+		]);
 	Route::resource('proveedores','ProveedoresController');
 	Route::get('proveedores/{id}/destroy', [
 		'uses' => 'ProveedoresController@destroy',
@@ -56,5 +56,12 @@ Route::group(['prefix' => 'admin'],function(){
 
 	Route::resource('secciones','SeccionesController');
 
+	Route::get('secciones/{id}/destroy', [
+			'uses' => 'SeccionesController@destroy',
+			'as' => 'admin.secciones.destroy'
+		]);
+
+
 });
+
 

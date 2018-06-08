@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Seccion;
+use App\Http\Requests\SeccionRequest; 
+use Excel;
+use Illuminate\Support\Facades\Input;
 
 class SeccionesController extends Controller
 {
@@ -77,7 +80,12 @@ class SeccionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $url = ('admin/secciones/create');
+
+        $seccion = Seccion::findOrFail($request->ide);
+        $seccion->update($request->all());
+
+        return back();
     }
 
     /**
@@ -88,6 +96,11 @@ class SeccionesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $seccion = Seccion::find($id);
+        $seccion->delete();
+
+        $url = ('admin/secciones/create');
+
+        return redirect($url);
     }
 }

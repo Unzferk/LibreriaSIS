@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{ asset('plugin/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('icon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <!--link rel="stylesheet" type="text/css" href="/DataTables/datatables.css"-->
+    <link rel="stylesheet" type="text/css" href="/DataTables/DataTables-1.10.16/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
@@ -44,6 +46,7 @@
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/script.js')}}"></script>
     <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/DataTables/DataTables-1.10.16/js/dataTables.bootstrap4.js"></script>
     
     <script> $(document).ready(function(){
         $('#Mytable').DataTable({"language" : idioma_espanol}); } );

@@ -84,7 +84,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
               </div>
           </fieldset>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer"> 
               <button type="submit" class="btn btn-primary">Guardar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
           </div>

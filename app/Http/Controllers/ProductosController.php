@@ -9,6 +9,8 @@ use App\Seccion;
 use App\Http\Requests\ProductoRequest; 
 use Excel;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\QueryException;
 
 class ProductosController extends Controller
 {
@@ -20,10 +22,10 @@ class ProductosController extends Controller
     public function index()
     {
 
-        $secciones = Seccion::all();
-        $productos = Producto::orderBy('nombre','ASC')->paginate(5);
-
-        return view('stock')->with('productos', $productos)->with('secciones', $secciones);
+        $productos = DB::table('producto')
+                    ->where('stock','<=',10)
+                    ->get();
+        return view('stock')->with('productos',$productos);
     }
 
     /**

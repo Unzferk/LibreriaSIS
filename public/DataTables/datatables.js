@@ -999,7 +999,7 @@
 			
 			// Map the initialisation options onto the settings object
 			_fnMap( oSettings.oFeatures, oInit, [
-				"bPaginate",
+				/*"bPaginate",*/
 				"bLengthChange",
 				"bFilter",
 				"bSort",

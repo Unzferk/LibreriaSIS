@@ -122,7 +122,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <td>{{ $producto->seccion->nombre }}</td>
                   <td>{{ $producto->descripcion }}</td>
                   <td>
-                    <a href=" {{ route('admin.productos.destroy', $producto->id) }} " class="btn btn-danger btn-sm">Eliminar</a>
+                    <a href=" {{ route('admin.productos.destroy', $producto->id) }} " class="btn btn-danger btn-sm">X</a>
       
                     <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#productEditModal" data-ide=" {{$producto->id}} " data-nombre= "{{$producto->nombre}}" data-codigo_pro= "{{$producto->codigo_pro}}" data-marca= "{{$producto->marca}}" data-precio= "{{$producto->precio}}" data-stock= "{{$producto->stock}}" data-seccion_id= "{{$producto->seccion_id}}" data-descripcion= "{{$producto->descripcion}}" data-dismiss="modal" >Editar</button>
 

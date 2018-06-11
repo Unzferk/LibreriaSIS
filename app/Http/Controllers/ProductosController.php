@@ -53,13 +53,13 @@ class ProductosController extends Controller
 
         $producto = new Producto;
         
-        $producto->codigo_pro = $request->input('codigo_pro');
+        $producto->Codigo = $request->input('codigo_pro');
         $producto->nombre = $request->input('nombre');
         $producto->marca = $request->input('marca');
         $producto->precio = $request->input('precio');
         $producto->stock = $request->input('stock');
         //$producto->categoria_id = $request->input('categoria_id');
-        $producto->seccion_id = $request->input('seccion_id');
+        $producto->Seccion = $request->input('seccion_id');
         $producto->descripcion = $request->input('descripcion');
 
         $producto->save();

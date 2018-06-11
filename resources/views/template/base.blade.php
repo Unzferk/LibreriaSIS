@@ -16,8 +16,8 @@
 <body>
     <header>
         <span class="lnr lnr-menu show"></span>
-        <img src="{{ asset('img/irbe6.png') }}" width="300" height="47" class="img-responsive" style="padding-left: 5%; margin-top: -5px; margin-left: 33%;">
-        <i class="fas fa-bell fa-2x img-responsive" style="margin-top: 10px; margin-left: 30%;"></i>        
+        <img src="{{ asset('img/irbe6.png') }}" width="300" height="47" class="img-responsive" style="padding-left: 5%; margin-top: 5px; margin-left: 33%;">
+        <!--<i class="fas fa-bell fa-2x img-responsive" style="margin-top: 5px; margin-left: 30%;"></i> -->       
     </header>
 
     <main>

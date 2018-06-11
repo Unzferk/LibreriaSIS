@@ -10,7 +10,15 @@
         <h2 class="text-left"><b>Secciones</b></h2>
       </div>      
       <hr/>
-
+@if (count($errors)>0)
+            <div class="alert alert-danger">
+            <ul>
+            @foreach($errors->all() as $error)
+              <li>{{$error}}</li>
+            @endforeach
+            </ul> 
+            </div>
+@endif 
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>  

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProveedorRequest extends FormRequest
+class SeccionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,8 @@ class ProveedorRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|max:35',
-            'telefono' => 'required|max:8|min:7',
-            'correo' => 'required|max:30',
-            'pagina_web' => 'max:50|required',
-            'fax' => 'max:30|required', 
-            'codigo' => 'required|max:8|min:4|unique:proveedor',
-            'direccion' => 'required|max:50',
+            'nombre' => 'required|string|unique:seccion,nombre|min:3|max:60',
+            'descripcion' => 'max:140',
         ];
     }
 }

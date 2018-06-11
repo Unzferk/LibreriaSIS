@@ -41,11 +41,11 @@ class ProveedoresController extends Controller
         $url = 'admin/proveedores/create';
         
         $proveedor = new Proveedor;
-        $proveedor->codigo_prv = $request->input('codigo_prv');
+        $proveedor->codigo = $request->input('codigo_prv');
         $proveedor->nombre = $request->input('nombre');
         $proveedor->telefono = $request->input('telefono');
         $proveedor->correo = $request->input('correo');
-        $proveedor->pag_web = $request->input('pag_web');
+        $proveedor->pagina_web = $request->input('pag_web');
         $proveedor->fax = $request->input('fax');
         $proveedor->direccion = $request->input('direccion');
         $proveedor->save();

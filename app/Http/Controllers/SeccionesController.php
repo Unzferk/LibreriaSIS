@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Seccion;
 use App\Http\Requests\SeccionRequest; 
@@ -41,12 +42,29 @@ class SeccionesController extends Controller
     {
         $url = ('admin/secciones/create');
 
-        $seccion = new Seccion;
-        $seccion->nombre = $request->input('nombre');
-        $seccion->descripcion = $request->input('descripcion');
-        
-        $seccion->save();
-        return redirect($url);
+        $rules = array(
+         'nombre' => 'required|string|unique:seccion,nombre|min:3|max:60',
+         'descripcion' => 'max:140'
+        ); 
+        $messages = array(
+          'nombre.required' => 'El campo es obligatorio',
+          'nombre.string' => 'Solo se permite letras',
+          'nombre.unique' => 'Este nombre ya existe',
+          'descripcion' => 'Solo se permite 140 carateres'
+        );
+
+        $validator = Validator::make(Input::all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect($url)->withErrors($validator);
+        } else if($validator->passes()) {
+            $seccion = new Seccion;
+            $seccion->nombre = $request->input('nombre');
+            $seccion->descripcion = $request->input('descripcion');
+            $seccion->save();
+            return redirect($url);
+        }
+
     }
 
     /**

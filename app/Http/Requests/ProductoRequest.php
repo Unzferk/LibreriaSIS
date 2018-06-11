@@ -30,6 +30,8 @@ class ProductoRequest extends FormRequest
             'precio' => 'numeric',
             'stock' => 'numeric',
             'Descripcion' => 'max:140',
+            'Seccion' => 'required',
+            'Codigo' => 'required|integer|unique:producto|min:3|max:8', 
 
         ];
     }

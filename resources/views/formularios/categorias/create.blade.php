@@ -11,17 +11,7 @@
       <hr/>
     <!--errors--> 
   
-    @if (count($errors)>0)
-      
-      <div class="alert alert-danger">
-        <ul>
-          @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-          @endforeach
-        </ul> 
-      </div>
-
-    @endif 
+    
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script src="{{asset('plugin/bootstrap/js/bootstrap.js')}}"></script>
@@ -40,6 +30,15 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
         <h5 class="modal-title" id="exampleModalLabel">Crear Nueva Categoria</h5>
       </div>
       <div class="modal-body">
+        @if (count($errors)>0)
+            <div class="alert alert-danger">
+            <ul>
+            @foreach($errors->all() as $error)
+              <li>{{$error}}</li>
+            @endforeach
+            </ul> 
+            </div>
+        @endif
         <form class="form"  action="/admin/categorias" method="POST" role="form" autocomplete="off">
                                {{csrf_field()}}
                                 <fieldset>  
@@ -60,6 +59,7 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Guardar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+             
           </div>
           </form>
     </div>

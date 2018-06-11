@@ -35,9 +35,9 @@
                 <tr>
                   <th scope="col">codigo</th>
                   <th scope="col">nombre</th>
+                  <th scope="col"><b>stock</b></th>
                   <th scope="col">marca</th>
                   <th scope="col">precio</th>
-                  <th scope="col">stock</th>
                   <th scope="col">seccion</th>
                   <th scope="col">descripcion</th>
                   <th scope="col">opciones</th>
@@ -48,15 +48,15 @@
                 <tr>
                   <td>{{ $producto->codigo_pro }}</td>
                   <td>{{ $producto->nombre }}</td>
+                  <td>{{ $producto->stock }}</td>
                   <td>{{ $producto->marca }}</td>
                   <td>{{ $producto->precio }}</td>
-                  <td>{{ $producto->stock }}</td>
                   <td>{{ $producto->seccion_id }}</td>
                   <td>{{ $producto->descripcion }}</td>
                   <td>
-                    <a href=" {{ route('admin.productos.destroy', $producto->id) }} " class="btn btn-danger btn-sm">Eliminar</a>
+                    <a href=" {{ route('admin.productos.destroy', $producto->id) }} " class="btn btn-danger btn-sm"><span class="lnr lnr-cross " style="color: white;"></span></a>
       
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#productEditModal" data-ide=" {{$producto->id}} " data-nombre= "{{$producto->nombre}}" data-codigo_pro= "{{$producto->codigo_pro}}" data-marca= "{{$producto->marca}}" data-precio= "{{$producto->precio}}" data-stock= "{{$producto->stock}}" data-seccion_id= "{{$producto->seccion_id}}" data-descripcion= "{{$producto->descripcion}}" data-dismiss="modal" >Editar</button>             
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#productEditModal" data-ide=" {{$producto->id}} " data-nombre= "{{$producto->nombre}}" data-codigo_pro= "{{$producto->codigo_pro}}" data-marca= "{{$producto->marca}}" data-precio= "{{$producto->precio}}" data-stock= "{{$producto->stock}}" data-seccion_id= "{{$producto->seccion_id}}" data-descripcion= "{{$producto->descripcion}}" data-dismiss="modal" ><span class="lnr lnr-pencil " style="color: black;"></span></button>             
                   </td>
                 </tr>
 

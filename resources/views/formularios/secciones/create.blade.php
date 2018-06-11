@@ -64,8 +64,8 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
     <tr>
       <td>{{ $seccion->nombre }}</td>
       <td>{{ $seccion->descripcion }}</td>
-      <td><a href=" {{ route('admin.secciones.destroy', $seccion->id) }} " class="btn btn-danger btn-sm"><b>X</b></a>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#seccEditModal" data-ide=" {{$seccion->id}} " data-nombre= "{{$seccion->nombre}}" data-descripcion= "{{$seccion->descripcion}}" data-dismiss="modal"  >Editar</button>
+      <td><a href=" {{ route('admin.secciones.destroy', $seccion->id) }} " class="btn btn-danger btn-sm"><b><span class="lnr lnr-cross " style="color: white;"></span></b></a>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#seccEditModal" data-ide=" {{$seccion->id}} " data-nombre= "{{$seccion->nombre}}" data-descripcion= "{{$seccion->descripcion}}" data-dismiss="modal"  ><span class="lnr lnr-pencil " style="color: black;"></span></button>
                     </td>
       </td>
     </tr>

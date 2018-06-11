@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title','default') | IRBE</title>
+    <link rel="icon" type="image/png" href="{{ asset('icon/libros.png') }}" />
     <link rel="stylesheet" href="{{ asset('plugin/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('icon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
@@ -31,7 +32,7 @@
             <li> <a href="<?= URL::to('admin/proveedores/create'); ?>"> <span class="lnr lnr-mustache icon5"></span><h6 class="text5">Proveedor</h6></a></li>            
             <li> <a href="<?= URL::to('admin/categorias/create'); ?>"> <span class="lnr lnr-tag icon7"></span><h6 class="text7">Categorias</h6></a></li>
             <li> <a href="<?= URL::to('admin/secciones/create'); ?>">   <span class="lnr lnr-book icon8"></span><h6 class="text8">Secciones</h6></a></li>
-            <li>  <span class="lnr lnr-question-circle icon9"></span><h6 class="text9">Nosotros</h6></li>
+            <li> <a href="<?= URL::to('admin/productos'); ?>"> <span class="lnr lnr-chart-bars icon2"></span><h6 class="text9">Stock</h6></a></li>
         </div>
         
         <div class="contend-main">    

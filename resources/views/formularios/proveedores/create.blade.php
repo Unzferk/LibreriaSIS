@@ -113,9 +113,9 @@ data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                   <td>{{ $proveedor->correo }}</td>
                   <td>{{ $proveedor->direccion }}</td>
                   <td>
-                    <a href=" {{ route('admin.proveedores.destroy', $proveedor->id) }} " class="btn btn-danger btn-sm">X</a>
+                    <a href=" {{ route('admin.proveedores.destroy', $proveedor->id) }} " class="btn btn-danger btn-sm"><span class="lnr lnr-cross " style="color: white;"></span></a>
       
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#proveEditModal" data-ide=" {{$proveedor->id}} " data-nombre= "{{$proveedor->nombre}}" data-codigo= "{{$proveedor->codigo_prv}}" data-correo= "{{$proveedor->correo}}" data-pag_web= "{{$proveedor->pag_web}}" data-telefono= "{{$proveedor->telefono}}" data-fax= "{{$proveedor->fax}}" data-direccion= "{{$proveedor->direccion}}" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#proveEditModal" data-ide=" {{$proveedor->id}} " data-nombre= "{{$proveedor->nombre}}" data-codigo= "{{$proveedor->codigo_prv}}" data-correo= "{{$proveedor->correo}}" data-pag_web= "{{$proveedor->pag_web}}" data-telefono= "{{$proveedor->telefono}}" data-fax= "{{$proveedor->fax}}" data-direccion= "{{$proveedor->direccion}}" data-dismiss="modal"><span class="lnr lnr-pencil " style="color: black"></span></button>
                 </tr>
 
                 @endforeach
